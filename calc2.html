@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        #display,
+        button {
+            font: lighter 20px Arial;
+            width: 100px;
+            height: 50px;
+            border-color: black;
+            margin: 5px;
+            padding: 15px;
+            background-color: aliceblue;
+        }
+
+        #display {
+            width: 555px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <table  bgcolor="lightsteelblue">
+        <tr>
+            <td>
+                <div>
+                    <div>
+                        <input id=display type=text>
+                    </div>
+                    <div>
+                        <button onclick="press('(')">(</button>
+                        <button onclick="press('7')">7</button>
+                        <button onclick="press('8')">8</button>
+                        <button onclick="press('9')">9</button>
+                        <button onclick="press('+')">+</button>
+
+                    </div>
+
+                    <div>
+                        <button onclick="press(')')">)</button>
+                        <button onclick="press('4')">4</button>
+                        <button onclick="press('5')">5</button>
+                        <button onclick="press('6')">6</button>
+                        <button onclick="press('-')">-</button>
+                    </div>
+                    <div>
+                        <button onclick="press(' ')"> </button>
+                        <button onclick="press('1')">1</button>
+                        <button onclick="press('2')">2</button>
+                        <button onclick="press('3')">3</button>
+                        <button onclick="press('*')">*</button>
+                    </div>
+                    <div>
+                        <button onclick="press('')"></button>
+                        <button onclick="reset('c')">C</button>
+                        <button onclicl="press('0')">0</button>
+                        <button onclick="calc('=')">=</button>
+                        <button onclick="press('/')">/</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    let display = document.getElementById("display");
+    function calc() {
+        display.value = eval(display.value);
+
+    }
+    function press(x) {
+        display.value += x;
+    }
+    function reset() {
+        display.value = " ";
+    }
+</script>
+
+</html>
